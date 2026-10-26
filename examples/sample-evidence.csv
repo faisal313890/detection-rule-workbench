@@ -1,0 +1,13 @@
+﻿report_id,implementation,line,event_id,source_matches,matched,expected_match,fixture_outcome
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,1,proc-001,True,True,True,true_positive
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,2,proc-002,True,True,True,true_positive
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,3,proc-003,True,True,False,false_positive
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,4,proc-004,True,False,False,true_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,5,proc-005,True,False,False,true_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,baseline,6,proc-006,True,False,True,false_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,1,proc-001,True,True,True,true_positive
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,2,proc-002,True,True,True,true_positive
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,3,proc-003,True,False,False,true_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,4,proc-004,True,False,False,true_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,5,proc-005,True,False,False,true_negative
+e7491cbe-e223-4f93-ac8c-7f28297575e0,candidate,6,proc-006,True,True,True,true_positive

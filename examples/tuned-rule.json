@@ -1,0 +1,27 @@
+{
+  "format": "drw/1",
+  "id": "a6208b61-8c81-4ce1-8a73-e59bfd2a442f",
+  "title": "Encoded PowerShell flag \u2014 tuned fixture",
+  "description": "Synthetic training rule. Review matches in context; not proof of an incident.",
+  "level": "medium",
+  "logsource": {
+    "product": "windows",
+    "category": "process_creation"
+  },
+  "selections": {
+    "selection": {
+      "Image|endswith": [
+        "\\powershell.exe",
+        "\\pwsh.exe"
+      ],
+      "CommandLine|contains": [
+        "-enc ",
+        "-encodedcommand "
+      ]
+    },
+    "filter_automation": {
+      "User": "LAB\\automation"
+    }
+  },
+  "condition": "selection and not filter_automation"
+}

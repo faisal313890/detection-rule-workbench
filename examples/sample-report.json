@@ -1,0 +1,484 @@
+{
+  "tool": "Detection Rule Workbench",
+  "version": "0.1",
+  "report_id": "e7491cbe-e223-4f93-ac8c-7f28297575e0",
+  "observed_at": "2026-10-26T03:21:07.206101+00:00",
+  "status": "complete",
+  "input": {
+    "physical_lines": 6,
+    "blank_lines": 0,
+    "valid_events": 6,
+    "invalid_records": 0,
+    "events_sha256": "31199c9c53b260ff89b66e8128fcaf549c04a1dacbdc10a98b90a7c901a4d402"
+  },
+  "candidate": {
+    "rule": {
+      "format": "drw/1",
+      "id": "a6208b61-8c81-4ce1-8a73-e59bfd2a442f",
+      "title": "Encoded PowerShell flag \u2014 tuned fixture",
+      "description": "Synthetic training rule. Review matches in context; not proof of an incident.",
+      "level": "medium",
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation"
+      },
+      "selections": {
+        "selection": {
+          "Image|endswith": [
+            "\\powershell.exe",
+            "\\pwsh.exe"
+          ],
+          "CommandLine|contains": [
+            "-enc ",
+            "-encodedcommand "
+          ]
+        },
+        "filter_automation": {
+          "User": "LAB\\automation"
+        }
+      },
+      "condition": "selection and not filter_automation"
+    },
+    "rule_sha256": "ea14de94c45cc21e596e5330bbea13380cf49684e1d27d4b9f6133297350fca0",
+    "valid_events": 6,
+    "source_eligible": 6,
+    "source_excluded": 0,
+    "matches": 3,
+    "labeled_events": 6,
+    "counts": {
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 3,
+      "unlabeled": 0
+    },
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "fixture_agreement": 1.0
+    },
+    "missing_field_predicates": {},
+    "rows": [
+      {
+        "line": 1,
+        "event_id": "proc-001",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": true,
+        "outcome": "true_positive",
+        "selections": {
+          "selection": true,
+          "filter_automation": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 2,
+        "event_id": "proc-002",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": true,
+        "outcome": "true_positive",
+        "selections": {
+          "selection": true,
+          "filter_automation": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "event_id": "proc-003",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": false,
+        "outcome": "true_negative",
+        "selections": {
+          "selection": true,
+          "filter_automation": true
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "event_id": "proc-004",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": false,
+        "outcome": "true_negative",
+        "selections": {
+          "selection": false,
+          "filter_automation": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": false
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "event_id": "proc-005",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": false,
+        "outcome": "true_negative",
+        "selections": {
+          "selection": false,
+          "filter_automation": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": false
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": false
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "event_id": "proc-006",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": true,
+        "outcome": "true_positive",
+        "selections": {
+          "selection": true,
+          "filter_automation": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "filter_automation",
+            "predicate": "User",
+            "present": true,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "omitted_rows": 0
+  },
+  "baseline": {
+    "rule": {
+      "format": "drw/1",
+      "id": "5a8cc9d8-2659-4ab4-b50d-a179bfc0f734",
+      "title": "Encoded PowerShell flag \u2014 broad baseline",
+      "description": "Synthetic training rule. Review matches in context; not proof of an incident.",
+      "level": "medium",
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation"
+      },
+      "selections": {
+        "selection": {
+          "Image|endswith": "\\powershell.exe",
+          "CommandLine|contains": [
+            "-enc ",
+            "-encodedcommand "
+          ]
+        }
+      },
+      "condition": "selection"
+    },
+    "rule_sha256": "c665f43f208fd0d6abab2fd130376588ba5b1a2e1af9d163d17c5fbd6859e4f4",
+    "valid_events": 6,
+    "source_eligible": 6,
+    "source_excluded": 0,
+    "matches": 3,
+    "labeled_events": 6,
+    "counts": {
+      "true_positive": 2,
+      "false_positive": 1,
+      "false_negative": 1,
+      "true_negative": 2,
+      "unlabeled": 0
+    },
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "fixture_agreement": 0.6666666666666666
+    },
+    "missing_field_predicates": {},
+    "rows": [
+      {
+        "line": 1,
+        "event_id": "proc-001",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": true,
+        "outcome": "true_positive",
+        "selections": {
+          "selection": true
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "line": 2,
+        "event_id": "proc-002",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": true,
+        "outcome": "true_positive",
+        "selections": {
+          "selection": true
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "event_id": "proc-003",
+        "source_matches": true,
+        "matched": true,
+        "expected_match": false,
+        "outcome": "false_positive",
+        "selections": {
+          "selection": true
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "event_id": "proc-004",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": false,
+        "outcome": "true_negative",
+        "selections": {
+          "selection": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": true
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "event_id": "proc-005",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": false,
+        "outcome": "true_negative",
+        "selections": {
+          "selection": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": false
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "event_id": "proc-006",
+        "source_matches": true,
+        "matched": false,
+        "expected_match": true,
+        "outcome": "false_negative",
+        "selections": {
+          "selection": false
+        },
+        "predicates": [
+          {
+            "selection": "selection",
+            "predicate": "Image|endswith",
+            "present": true,
+            "matched": false
+          },
+          {
+            "selection": "selection",
+            "predicate": "CommandLine|contains",
+            "present": true,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "omitted_rows": 0
+  },
+  "changed_match_count": 2,
+  "changed_matches": [
+    {
+      "line": 3,
+      "event_id": "proc-003",
+      "baseline_matched": true,
+      "candidate_matched": false,
+      "expected_match": false
+    },
+    {
+      "line": 6,
+      "event_id": "proc-006",
+      "baseline_matched": false,
+      "candidate_matched": true,
+      "expected_match": true
+    }
+  ],
+  "omitted_changed_matches": 0,
+  "diagnostics": [],
+  "omitted_diagnostics": 0,
+  "limits": [
+    "DRW/1 local event matching only. No Sigma import, YAML parsing, backend conversion, SIEM deployment, live monitoring or external lookup.",
+    "A match is rule behavior, not proof of malicious activity. A non-match does not establish safety.",
+    "Expected-match labels are user-supplied fixture expectations. Precision/recall describe agreement with those labels, not real-world attack detection accuracy.",
+    "Source product/category must match exactly. Source-excluded valid events count as non-matches, including in fixture metrics.",
+    "Field names are literal and case-sensitive, including dots. String matching is Unicode casefolded; integers and Booleans are strictly typed. No field coercion or browser/SIEM equivalence is promised.",
+    "Missing/null fields fail ordinary predicates; exists checks key presence including null. NOT can therefore allow an event with a missing filter field. Review coverage.",
+    "No aggregation, time windows, correlations, regex, wildcards, nested event objects, field mapping or enrichment.",
+    "Invalid records are excluded and reported. Duplicate event IDs/records are retained; line numbers identify occurrences.",
+    "At most 200 event evidence rows, 50 diagnostics and 200 changed-match rows are shown/exported. Aggregate counts cover all valid input events.",
+    "Reports contain full rule definitions, event IDs, line numbers and structural match evidence. Event field values are withheld, but rules and identifiers may contain sensitive information. Review before sharing."
+  ]
+}

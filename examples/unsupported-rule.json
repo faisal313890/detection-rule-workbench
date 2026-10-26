@@ -1,0 +1,17 @@
+{
+  "format": "drw/1",
+  "id": "5a8cc9d8-2659-4ab4-b50d-a179bfc0f734",
+  "title": "Unsupported regex example",
+  "description": "Synthetic training rule. Review matches in context; not proof of an incident.",
+  "level": "medium",
+  "logsource": {
+    "product": "windows",
+    "category": "process_creation"
+  },
+  "selections": {
+    "selection": {
+      "CommandLine|re": ".*"
+    }
+  },
+  "condition": "selection"
+}

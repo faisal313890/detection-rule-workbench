@@ -1,0 +1,20 @@
+{
+  "format": "drw/1",
+  "id": "17140487-c4cf-4bd8-8a02-133438ef9479",
+  "title": "Failed authentication to a named admin account",
+  "description": "Synthetic training rule. Review matches in context; not proof of an incident.",
+  "level": "medium",
+  "logsource": {
+    "product": "training",
+    "category": "authentication"
+  },
+  "selections": {
+    "failure": {
+      "Result": "failure"
+    },
+    "account": {
+      "User|startswith": "admin"
+    }
+  },
+  "condition": "failure and account"
+}

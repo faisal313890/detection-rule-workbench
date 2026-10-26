@@ -1,0 +1,4 @@
+{"event_id": "auth-001", "source": {"product": "training", "category": "authentication"}, "fields": {"Result": "failure", "User": "admin"}, "expected_match": true}
+{"event_id": "auth-002", "source": {"product": "training", "category": "authentication"}, "fields": {"Result": "failure", "User": "admin.backup"}, "expected_match": true}
+{"event_id": "auth-003", "source": {"product": "training", "category": "authentication"}, "fields": {"Result": "success", "User": "admin"}, "expected_match": false}
+{"event_id": "auth-004", "source": {"product": "training", "category": "authentication"}, "fields": {"Result": "failure", "User": "alice"}, "expected_match": false}
